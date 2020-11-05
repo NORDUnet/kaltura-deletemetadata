@@ -1,10 +1,10 @@
 # Delete user metadata
-This code lets you delete user metadata
+This code lets you search and delete user metadata in Kaltura
 
 ## Requirements  
 Kaltura partner id  
 Kaltura admin secret  
-Python3  (tested on 3.8.5)
+Python3  (tested on 3.8.5)  
 KalturaApiClient (tested on 15.14.0)  
 
 ## Usage  
