@@ -71,7 +71,7 @@ while True:
 
             delete = input("Delete metadata? (Y/n) ")
 
-            if delete == 'y' or delete == '':
+            if delete.lower() == 'y' or delete == '':
                 for res in result.objects:
                     print(f'deleting: {res.id}')
                     kc.metadata.metadata.delete(res.id)
