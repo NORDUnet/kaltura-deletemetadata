@@ -1,19 +1,25 @@
+import argparse
 import KalturaClient
 from KalturaClient.Plugins import Core as KalturaCore
 from KalturaClient.exceptions import KalturaException
-
-
-partnerId = input("Enter partner id: ")
-adminSecret = input("Enter admin secret: ")
+parser = argparse.ArgumentParser(description="Helper for deleting kaltura user metadata")
+parser.add_argument("ks", help="existing ks", nargs="?")
+args = parser.parse_args()
 
 conf = KalturaClient.KalturaConfiguration()
 conf.serviceUrl = "https://api.kaltura.nordu.net"
 
 kc = KalturaClient.KalturaClient(conf)
 kc.clientConfiguration['clientTag'] = 'metadata-deleter'
-ks = kc.session.start(adminSecret, None, 2, partnerId)
+
+if args.ks is None:
+    partnerId = input("Enter partner id: ")
+    adminSecret = input("Enter admin secret: ")
+    ks = kc.session.start(adminSecret, None, 2, partnerId)
+    print(ks)
+else:
+    ks = args.ks
 kc.setKs(ks)
-print(ks)
 
 
 while True:
