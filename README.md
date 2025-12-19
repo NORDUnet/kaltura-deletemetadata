@@ -7,6 +7,9 @@ Kaltura admin secret
 Python3  (tested on 3.8.5)  
 KalturaApiClient (tested on 15.14.0)  
 
+## Setup
+Install stuff
+
 ## Usage  
 1. Run the program: `python3 deletemetadata.py`  
 2. When asked, enter `kaltura partner id`  
