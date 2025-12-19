@@ -47,6 +47,9 @@ while True:
         if fullname != "":
             userFilter.firstNameStartsWith = names[0]
             userFilter.lastNameStartsWith = names[-1]
+        if not email and not fullname:
+            print("No user found.")
+            continue
 
         users = kc.user.list(userFilter).objects
 
